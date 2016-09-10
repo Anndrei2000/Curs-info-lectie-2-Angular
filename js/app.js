@@ -1,23 +1,7 @@
 var app  = angular.module("myApp",[]);
-app.controller("TestCtrl",["$scope", function($scope){
-	$scope.names = [
-     'Carmen','Andrei','Cristi','Ionut','Alex'
-	]
-	$scope.name="Andrei";
-    // Add function
-	$scope.clickBtn=function(){
-		console.log("Button Clicked");
-		console.log($scope.firstname);
-
-
-		$scope.names.push($scope.firstname);
-		$scope.firstname = "";
-
-	}
-      // Delete function
-      $scope.delete = function(index){
-	     console.log(index);
-	     $scope.names.splice(index,1);
-      }
-
+app.controller("TestCtrl",["$scope",'$http', function($scope, $http){
+	$http.get("https://jsonplaceholder.typicode.com/users").then(function(response){
+		console.log(response.data);
+		$scope.data = response.data;
+       });	
 }]);

@@ -12,21 +12,7 @@
 		
 	</script>
 </head>
-<body ng-controller="TestCtrl">
-          
-           <ul>
-           <li ng-repeat='i in names'>
-           			{{i}}
-           			{{names.indexOf(i)}}
-           			<button ng-click="delete(names.indexOf(i))"
-           			class="btn btn-danger">Delete</button>
-                      </li>
-           			
-           </ul>
-           <input type="text" class="form-control" ng-model="firstname" />
-           <button ng-click="clickBtn()" class="btn btn-primary">Click
-       
-           </button>
-         
+<body ng-controller="TestCtrl"> 
+  <div ng-include="'components/list.html'"></div>
 </body>
 </html>
